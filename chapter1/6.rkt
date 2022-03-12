@@ -24,8 +24,8 @@
 
 (define (sqrt-iter-new guess x) (new-if (good-enough? guess x)
                 guess
-                (sqrt-iter (improve guess x) x)))
+                (sqrt-iter-new (improve guess x) x)))
 
 (define (sqrt-new x) (sqrt-iter-new 1.0 x))
 
-(sqrt-new 1396); no trouble at all....
+(sqrt-new 1396); infinite recursion 
